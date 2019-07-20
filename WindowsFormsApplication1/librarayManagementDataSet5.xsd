@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="librarayManagementDataSet5" targetNamespace="http://tempuri.org/librarayManagementDataSet5.xsd" xmlns:mstns="http://tempuri.org/librarayManagementDataSet5.xsd" xmlns="http://tempuri.org/librarayManagementDataSet5.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="librarayManagementConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="librarayManagementConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsFormsApplication1.Properties.Settings.GlobalReference.Default.librarayManagementConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="book_issueTableAdapter" GeneratorDataComponentClassName="book_issueTableAdapter" Name="book_issue" UserDataComponentName="book_issueTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="librarayManagementConnectionString (Settings)" DbObjectName="librarayManagement.dbo.book_issue" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT issue_date, return_date, status, detail FROM dbo.book_issue</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="issue_date" DataSetColumn="issue_date" />
+              <Mapping SourceColumn="return_date" DataSetColumn="return_date" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
+              <Mapping SourceColumn="detail" DataSetColumn="detail" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="book_returnTableAdapter" GeneratorDataComponentClassName="book_returnTableAdapter" Name="book_return" UserDataComponentName="book_returnTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="librarayManagementConnectionString (Settings)" DbObjectName="librarayManagement.dbo.book_return" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT return_date, detail, fine FROM dbo.book_return</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="return_date" DataSetColumn="return_date" />
+              <Mapping SourceColumn="detail" DataSetColumn="detail" />
+              <Mapping SourceColumn="fine" DataSetColumn="fine" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="member_registrationTableAdapter" GeneratorDataComponentClassName="member_registrationTableAdapter" Name="member_registration" UserDataComponentName="member_registrationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="librarayManagementConnectionString (Settings)" DbObjectName="librarayManagement.dbo.member_registration" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[member_registration] WHERE (([member_id] = @Original_member_id) AND ([first_name] = @Original_first_name) AND ([last_name] = @Original_last_name) AND ((@IsNull_reg_no = 1 AND [reg_no] IS NULL) OR ([reg_no] = @Original_reg_no)) AND ((@IsNull_roll_no = 1 AND [roll_no] IS NULL) OR ([roll_no] = @Original_roll_no)) AND ((@IsNull_session = 1 AND [session] IS NULL) OR ([session] = @Original_session)) AND ((@IsNull_course_name = 1 AND [course_name] IS NULL) OR ([course_name] = @Original_course_name)) AND ([member_type] = @Original_member_type) AND ([department] = @Original_department) AND ([date] = @Original_date) AND ([sex] = @Original_sex) AND ([address] = @Original_address))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_member_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="member_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_first_name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="first_name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_last_name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_reg_no" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="reg_no" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_reg_no" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="reg_no" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_roll_no" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="roll_no" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_roll_no" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="roll_no" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_session" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="session" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_session" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="session" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_course_name" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="course_name" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_course_name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="course_name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_member_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="member_type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_department" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="department" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_date" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_sex" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="sex" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_address" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="address" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT member_id, first_name, last_name, reg_no, roll_no, session, course_name, member_type, department, date, sex, address FROM dbo.member_registration</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[member_registration] SET [first_name] = @first_name, [last_name] = @last_name, [reg_no] = @reg_no, [roll_no] = @roll_no, [session] = @session, [course_name] = @course_name, [member_type] = @member_type, [department] = @department, [date] = @date, [sex] = @sex, [address] = @address WHERE (([member_id] = @Original_member_id) AND ([first_name] = @Original_first_name) AND ([last_name] = @Original_last_name) AND ((@IsNull_reg_no = 1 AND [reg_no] IS NULL) OR ([reg_no] = @Original_reg_no)) AND ((@IsNull_roll_no = 1 AND [roll_no] IS NULL) OR ([roll_no] = @Original_roll_no)) AND ((@IsNull_session = 1 AND [session] IS NULL) OR ([session] = @Original_session)) AND ((@IsNull_course_name = 1 AND [course_name] IS NULL) OR ([course_name] = @Original_course_name)) AND ([member_type] = @Original_member_type) AND ([department] = @Original_department) AND ([date] = @Original_date) AND ([sex] = @Original_sex) AND ([address] = @Original_address));
+SELECT member_id, first_name, last_name, reg_no, roll_no, session, course_name, member_type, department, date, sex, address FROM member_registration WHERE (member_id = @member_id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@first_name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="first_name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@last_name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@reg_no" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="reg_no" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@roll_no" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="roll_no" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@session" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="session" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@course_name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="course_name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@member_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="member_type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@department" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="department" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@date" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@sex" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="sex" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@address" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="address" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_member_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="member_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_first_name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="first_name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_last_name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="last_name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_reg_no" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="reg_no" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_reg_no" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="reg_no" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_roll_no" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="roll_no" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_roll_no" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="roll_no" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_session" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="session" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_session" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="session" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_course_name" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="course_name" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_course_name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="course_name" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_member_type" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="member_type" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_department" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="department" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_date" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_sex" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="sex" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_address" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="address" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="member_id" ColumnName="member_id" DataSourceName="librarayManagement.dbo.member_registration" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@member_id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="member_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="member_id" DataSetColumn="member_id" />
+              <Mapping SourceColumn="first_name" DataSetColumn="first_name" />
+              <Mapping SourceColumn="last_name" DataSetColumn="last_name" />
+              <Mapping SourceColumn="reg_no" DataSetColumn="reg_no" />
+              <Mapping SourceColumn="roll_no" DataSetColumn="roll_no" />
+              <Mapping SourceColumn="session" DataSetColumn="session" />
+              <Mapping SourceColumn="course_name" DataSetColumn="course_name" />
+              <Mapping SourceColumn="member_type" DataSetColumn="member_type" />
+              <Mapping SourceColumn="department" DataSetColumn="department" />
+              <Mapping SourceColumn="date" DataSetColumn="date" />
+              <Mapping SourceColumn="sex" DataSetColumn="sex" />
+              <Mapping SourceColumn="address" DataSetColumn="address" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="librarayManagementDataSet5" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="librarayManagementDataSet5" msprop:Generator_UserDSName="librarayManagementDataSet5">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="book_issue" msprop:Generator_TableClassName="book_issueDataTable" msprop:Generator_TableVarName="tablebook_issue" msprop:Generator_RowChangedName="book_issueRowChanged" msprop:Generator_TablePropName="book_issue" msprop:Generator_RowDeletingName="book_issueRowDeleting" msprop:Generator_RowChangingName="book_issueRowChanging" msprop:Generator_RowEvHandlerName="book_issueRowChangeEventHandler" msprop:Generator_RowDeletedName="book_issueRowDeleted" msprop:Generator_RowClassName="book_issueRow" msprop:Generator_UserTableName="book_issue" msprop:Generator_RowEvArgName="book_issueRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="issue_date" msprop:Generator_ColumnVarNameInTable="columnissue_date" msprop:Generator_ColumnPropNameInRow="issue_date" msprop:Generator_ColumnPropNameInTable="issue_dateColumn" msprop:Generator_UserColumnName="issue_date" type="xs:dateTime" />
+              <xs:element name="return_date" msprop:Generator_ColumnVarNameInTable="columnreturn_date" msprop:Generator_ColumnPropNameInRow="return_date" msprop:Generator_ColumnPropNameInTable="return_dateColumn" msprop:Generator_UserColumnName="return_date" type="xs:dateTime" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="detail" msprop:Generator_ColumnVarNameInTable="columndetail" msprop:Generator_ColumnPropNameInRow="detail" msprop:Generator_ColumnPropNameInTable="detailColumn" msprop:Generator_UserColumnName="detail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="book_return" msprop:Generator_TableClassName="book_returnDataTable" msprop:Generator_TableVarName="tablebook_return" msprop:Generator_RowChangedName="book_returnRowChanged" msprop:Generator_TablePropName="book_return" msprop:Generator_RowDeletingName="book_returnRowDeleting" msprop:Generator_RowChangingName="book_returnRowChanging" msprop:Generator_RowEvHandlerName="book_returnRowChangeEventHandler" msprop:Generator_RowDeletedName="book_returnRowDeleted" msprop:Generator_RowClassName="book_returnRow" msprop:Generator_UserTableName="book_return" msprop:Generator_RowEvArgName="book_returnRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="return_date" msprop:Generator_ColumnVarNameInTable="columnreturn_date" msprop:Generator_ColumnPropNameInRow="return_date" msprop:Generator_ColumnPropNameInTable="return_dateColumn" msprop:Generator_UserColumnName="return_date" type="xs:dateTime" />
+              <xs:element name="detail" msprop:Generator_ColumnVarNameInTable="columndetail" msprop:Generator_ColumnPropNameInRow="detail" msprop:Generator_ColumnPropNameInTable="detailColumn" msprop:Generator_UserColumnName="detail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fine" msprop:Generator_ColumnVarNameInTable="columnfine" msprop:Generator_ColumnPropNameInRow="fine" msprop:Generator_ColumnPropNameInTable="fineColumn" msprop:Generator_UserColumnName="fine" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="member_registration" msprop:Generator_TableClassName="member_registrationDataTable" msprop:Generator_TableVarName="tablemember_registration" msprop:Generator_RowChangedName="member_registrationRowChanged" msprop:Generator_TablePropName="member_registration" msprop:Generator_RowDeletingName="member_registrationRowDeleting" msprop:Generator_RowChangingName="member_registrationRowChanging" msprop:Generator_RowEvHandlerName="member_registrationRowChangeEventHandler" msprop:Generator_RowDeletedName="member_registrationRowDeleted" msprop:Generator_RowClassName="member_registrationRow" msprop:Generator_UserTableName="member_registration" msprop:Generator_RowEvArgName="member_registrationRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="member_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnmember_id" msprop:Generator_ColumnPropNameInRow="member_id" msprop:Generator_ColumnPropNameInTable="member_idColumn" msprop:Generator_UserColumnName="member_id" type="xs:int" />
+              <xs:element name="first_name" msprop:Generator_ColumnVarNameInTable="columnfirst_name" msprop:Generator_ColumnPropNameInRow="first_name" msprop:Generator_ColumnPropNameInTable="first_nameColumn" msprop:Generator_UserColumnName="first_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="last_name" msprop:Generator_ColumnVarNameInTable="columnlast_name" msprop:Generator_ColumnPropNameInRow="last_name" msprop:Generator_ColumnPropNameInTable="last_nameColumn" msprop:Generator_UserColumnName="last_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="reg_no" msprop:Generator_ColumnVarNameInTable="columnreg_no" msprop:Generator_ColumnPropNameInRow="reg_no" msprop:Generator_ColumnPropNameInTable="reg_noColumn" msprop:Generator_UserColumnName="reg_no" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="roll_no" msprop:Generator_ColumnVarNameInTable="columnroll_no" msprop:Generator_ColumnPropNameInRow="roll_no" msprop:Generator_ColumnPropNameInTable="roll_noColumn" msprop:Generator_UserColumnName="roll_no" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="session" msprop:Generator_ColumnVarNameInTable="columnsession" msprop:Generator_ColumnPropNameInRow="session" msprop:Generator_ColumnPropNameInTable="sessionColumn" msprop:Generator_UserColumnName="session" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="course_name" msprop:Generator_ColumnVarNameInTable="columncourse_name" msprop:Generator_ColumnPropNameInRow="course_name" msprop:Generator_ColumnPropNameInTable="course_nameColumn" msprop:Generator_UserColumnName="course_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="member_type" msprop:Generator_ColumnVarNameInTable="columnmember_type" msprop:Generator_ColumnPropNameInRow="member_type" msprop:Generator_ColumnPropNameInTable="member_typeColumn" msprop:Generator_UserColumnName="member_type">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="department" msprop:Generator_ColumnVarNameInTable="columndepartment" msprop:Generator_ColumnPropNameInRow="department" msprop:Generator_ColumnPropNameInTable="departmentColumn" msprop:Generator_UserColumnName="department">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="date" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_UserColumnName="date" type="xs:dateTime" />
+              <xs:element name="sex" msprop:Generator_ColumnVarNameInTable="columnsex" msprop:Generator_ColumnPropNameInRow="sex" msprop:Generator_ColumnPropNameInTable="sexColumn" msprop:Generator_UserColumnName="sex">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="address" msprop:Generator_ColumnVarNameInTable="columnaddress" msprop:Generator_ColumnPropNameInRow="address" msprop:Generator_ColumnPropNameInTable="addressColumn" msprop:Generator_UserColumnName="address">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:member_registration" />
+      <xs:field xpath="mstns:member_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
